@@ -35,3 +35,6 @@ sudo mkdir -p /usr/share/fonts/truetype/Jetbrains
 sudo cp JetbrainsMono/*.ttf /usr/share/fonts/truetype/Jetbrains
 fc-cache -f -v
 fc-list | grep Jetbrains
+
+echo "*** Installing VSCode ***"
+sudo snap install --classic code
