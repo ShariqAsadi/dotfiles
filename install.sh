@@ -2,8 +2,8 @@
 
 echo "*** Installing Updates ***"
 
-#sudo apt update
-#sudo apt upgrade -y
+sudo apt update
+sudo apt upgrade -y
 
 echo "*** Installing curl ***"
 sudo apt install curl
@@ -27,3 +27,11 @@ ln -fs ~/workspace/dotfiles/starship.toml ~/.config/starship.toml
 
 echo "*** Changing shell to zsh ***"
 chsh -s $(which zsh)
+
+echo "*** Installing Jetbrains Nerd Font ***"
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+unzip JetBrainsMono.zip -d JetbrainsMono
+sudo mkdir -p /usr/share/fonts/truetype/Jetbrains
+sudo cp JetbrainsMono/*.ttf /usr/share/fonts/truetype/Jetbrains
+fc-cache -f -v
+fc-list | grep Jetbrains
